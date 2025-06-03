@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Welcome</title>
+</head>
+<body>
+<div class="container">
+    <h1 class="mt-5">Welcome!</h1>
+    <p class="lead">We're glad to see you here.</p>
+
+    <h2 class="mt-4">Products</h2>
+    <table class="table table-bordered mt-3">
+        <thead class="thead-light">
+        <tr>
+            <th>ID</th>
+            <th>Product Name</th>
+            <th>Section ID</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="product : ${products}">
+            <td th:text="${product.idProduct}"></td>
+            <td th:text="${product.productName}"></td>
+            <td th:text="${product.sectionId}"></td>
+            <td>
+                <a th:href="@{/edit-product/{id}(id=${product.idProduct})}" class="btn btn-primary">Edit</a>
+                <a th:href="@{/delete-product/{id}(id=${product.idProduct})}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="/add-product" class="btn btn-success">Add Product</a>
+
+
+    <a href="/" class="btn btn-secondary">Logout</a>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

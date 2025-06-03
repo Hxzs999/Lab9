@@ -1,0 +1,11 @@
+app\spring\controller\ApiController.class
+app\spring\model\ProductEntity.class
+app\spring\repository\SectionRepository.class
+app\spring\controller\AuthController.class
+app\spring\model\SectionEntity.class
+app\spring\Application.class
+app\spring\repository\ProductRepository.class
+app\spring\service\CustomUserDetailsService.class
+app\spring\model\UserEntity.class
+app\spring\repository\UserRepository.class
+app\spring\config\SecurityConfig.class
